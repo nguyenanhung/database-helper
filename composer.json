@@ -1,0 +1,34 @@
+{
+    "type": "library",
+    "name": "nguyenanhung/database-helper",
+    "description": "Basic and Advanced Database Helper",
+    "keywords": [
+        "helper",
+        "json",
+        "php"
+    ],
+    "homepage": "https://github.com/nguyenanhung/database-helper",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Nguyen An Hung",
+            "email": "dev@nguyenanhung.com",
+            "homepage": "https://nguyenanhung.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0 || ^8.0",
+        "ext-json": "*",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "nguyenanhung\\Bear\\Database\\": "src/"
+        },
+        "files": [
+            "helpers/helpers.php"
+        ]
+    }
+}
