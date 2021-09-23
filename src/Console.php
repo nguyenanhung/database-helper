@@ -29,7 +29,7 @@ class Console
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/22/2021 28:39
      */
-    public static function writeLn($message, $newLine = "\n")
+    public static function writeLn($message, string $newLine = "\n")
     {
         if (function_exists('json_encode') && (is_array($message) || is_object($message))) {
             $message = json_encode($message);

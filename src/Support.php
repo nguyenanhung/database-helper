@@ -26,15 +26,15 @@ class Support
     /**
      * Function connectUsePhpTelnet
      *
-     * @param string $hostname
-     * @param string $port
+     * @param string     $hostname
+     * @param string|int $port
      *
      * @return array
      * @author   : 713uk13m <dev@nguyenanhung.com>
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/22/2021 27:45
      */
-    public static function connectUsePhpTelnet($hostname = '', $port = '')
+    public static function connectUsePhpTelnet(string $hostname = '', $port = ''): array
     {
         $message = 'Connection to server ' . $hostname . ':' . $port . '';
         try {
@@ -63,14 +63,14 @@ class Support
     /**
      * Function phpTelnet
      *
-     * @param string $hostname
-     * @param string $port
+     * @param string     $hostname
+     * @param string|int $port
      *
      * @author   : 713uk13m <dev@nguyenanhung.com>
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/22/2021 29:20
      */
-    public static function phpTelnet($hostname = '', $port = '')
+    public static function phpTelnet(string $hostname = '', $port = '')
     {
         $result = self::connectUsePhpTelnet($hostname, $port);
         Console::writeLn($result['message'] . ' -> ' . $result['status']);
@@ -90,7 +90,7 @@ class Support
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/22/2021 30:55
      */
-    public static function checkConnectDatabaseWithPDO($host = '', $port = '', $database = '', $username = '', $password = '')
+    public static function checkConnectDatabaseWithPDO(string $host = '', $port = '', string $database = '', string $username = '', string $password = ''): array
     {
         try {
             $dsnString = "mysql:host=$host;port=$port;dbname=$database";
@@ -125,7 +125,7 @@ class Support
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/22/2021 31:17
      */
-    public static function checkConnectDatabase($host = '', $port = '', $database = '', $username = '', $password = '')
+    public static function checkConnectDatabase(string $host = '', $port = '', string $database = '', string $username = '', string $password = '')
     {
         $result = self::checkConnectDatabaseWithPDO($host, $port, $database, $username, $password);
         Console::writeLn($result['message']);
