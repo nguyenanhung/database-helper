@@ -36,7 +36,7 @@ class Support
      */
     public static function connectUsePhpTelnet($hostname = '', $port = '')
     {
-        $message = 'Connection to server ' . $hostname . ':' . $port . '';
+        $message = 'Connection to server ' . $hostname . ':' . $port;
         try {
             $socket = fsockopen($hostname, $port);
             if ($socket) {
@@ -94,13 +94,13 @@ class Support
     {
         try {
             $dsnString = "mysql:host=$host;port=$port;dbname=$database";
-            $conn      = new PDO($dsnString, $username, $password);
+            $conn = new PDO($dsnString, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $result = array(
                 'code'    => true,
                 'message' => "Connected successfully to Database : " . $dsnString . " with username: " . $username . " and your input password"
             );
-            $conn   = null;
+            $conn = null;
         } catch (PDOException $e) {
             $result = array(
                 'code'    => false,

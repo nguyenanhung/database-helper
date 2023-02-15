@@ -19,16 +19,13 @@
         }
     ],
     "require": {
-        "php": "^5.6 || ^7.0 || ^8.0",
+        "php": ">=5.3",
         "ext-json": "*",
         "ext-pdo": "*"
     },
     "autoload": {
         "psr-4": {
             "nguyenanhung\\Bear\\Database\\": "src/"
-        },
-        "files": [
-            "helpers/helpers.php"
-        ]
+        }
     }
 }
